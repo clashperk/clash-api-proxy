@@ -1,0 +1,19 @@
+{
+  "name": "mediator",
+  "version": "1.0.1",
+  "description": "Simple Clash of Clans Proxy for my Personal Projects",
+  "main": "index.js",
+  "author": "SUVAJIT (suvajit.me@gmail.com)",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "clashofclans.js": "github:clashperk/clashofclans.js",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

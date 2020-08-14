@@ -1,0 +1,1 @@
+## Simple Clash of Clans Proxy for my Personal Projects
