@@ -2,7 +2,7 @@ require('dotenv').config();
 const url = require('url');
 const cors = require('cors');
 const express = require('express');
-const proxy = require('express-http-proxy');
+// const proxy = require('express-http-proxy');
 const { Client } = require('clashofclans.js');
 const client = new Client({ token: process.env.TOKEN, timeout: 3000 });
 const port = process.env.PORT || 8080;
