@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 app.use(log, async (req, res) => {
 	const response = await client.fetch(req.path);
-	return res.status(response!.statusCode).json(response!.data);
+	return res.status(response.statusCode).json(response.data);
 });
 
 (async () => {
@@ -29,5 +29,5 @@ app.use(log, async (req, res) => {
 
 	app.listen(process.env.PORT, () => {
 		console.log(`[SERVER] Proxy Listening on Port ${process.env.PORT}`);
-	});	
+	});
 })();

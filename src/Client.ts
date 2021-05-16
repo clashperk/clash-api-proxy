@@ -23,7 +23,7 @@ export default class Client {
 		}).catch(() => null);
 
 		const parsed = await res?.json().catch(() => null);
-		if (parsed) return { statusCode: res!.status, data: parsed  };
+		if (parsed) return { statusCode: res!.status, data: parsed };
 		return { statusCode: 500, data: { message: 'Unknown error happened when handling the request.' } };
 	}
 
