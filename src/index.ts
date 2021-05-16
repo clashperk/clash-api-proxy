@@ -2,6 +2,7 @@ import Env from 'dotenv';
 Env.config();
 
 import express, { Request, Response, NextFunction } from 'express';
+import { stringify, ParsedUrlQueryInput } from 'querystring';
 import Client from './Client';
 import cors from 'cors';
 
@@ -20,7 +21,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(log, async (req, res) => {
-	const response = await client.fetch(req.path);
+	const response = await client.fetch(`${req.path}?${stringify(req.query as ParsedUrlQueryInput)}`);
 	return res.status(response.statusCode).json(response.data);
 });
 
