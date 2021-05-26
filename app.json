@@ -1,0 +1,16 @@
+{
+	"name": "Clash of Clans API Proxy for Local Development",
+	"description": "This app should not be used in production. This is for demostration and development purposes only.",
+	"repository": "https://github.com/clashperk/clash-api-tools",
+	"env": {
+		"SUPERCELL_EMAIL": {
+			"description": "Developer site Email."
+		},
+		"SUPERCELL_PASSWORD": {
+			"description": "Developer site Password."
+		},
+		"NPM_CONFIG_PRODUCTION": {
+			"value": "false"
+		}
+	}
+}
