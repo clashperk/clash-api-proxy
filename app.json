@@ -9,8 +9,13 @@
 		"SUPERCELL_PASSWORD": {
 			"description": "Developer site Password."
 		},
+		"AUTHORIZATION": {
+			"required": false,
+			"description": "Protect Endpoints?"
+		},
 		"NPM_CONFIG_PRODUCTION": {
-			"value": "false"
+			"value": "false",
+			"description": "DO NOT CHANGE THIS VALUE"
 		}
 	}
 }

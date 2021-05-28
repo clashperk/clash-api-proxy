@@ -27,6 +27,15 @@ app.get('/', (req, res) => {
 	return res.status(200).json({ status: 'ok' });
 });
 
+if (process.env.AUTHORIZATION) {
+	app.use((req, res, next) => {
+		if (req.headers.authorization?.split(/ +/g).pop() !== process.env.AUTHORIZATION) {
+			return res.status(403).json({ message: 'Missing Authorization Token!', reason: 'accessDenied' });
+		}
+		next();
+	});
+}
+
 app.use(log, async (req, res) => {
 	const response = await client.fetch(`${req.path}?${stringify(req.query as ParsedUrlQueryInput)}`);
 	return res.status(response.statusCode).json(response.data);
