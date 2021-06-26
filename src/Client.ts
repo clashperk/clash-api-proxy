@@ -1,7 +1,7 @@
-import { Client as APIClient } from 'supercell-apigen';
+import { Extension } from 'clashofclans.js';
 import fetch from 'node-fetch';
 
-const api = new APIClient({
+const ext = new Extension({
 	keyCount: 1,
 	keyName: 'ClashPerk_API_Proxy_Token',
 	email: process.env.SUPERCELL_EMAIL!,
@@ -10,7 +10,7 @@ const api = new APIClient({
 
 export default class Client {
 	private tokens: string[] = [];
-	private timeout = 3000;
+	private timeout = 30000;
 	private tokenIndex = 0;
 
 	private get token() {
@@ -34,7 +34,7 @@ export default class Client {
 	}
 
 	public async init() {
-		await api.login();
-		return this.tokens.push(...api.tokens);
+		await ext.login();
+		return this.tokens.push(...ext.keys);
 	}
 }
